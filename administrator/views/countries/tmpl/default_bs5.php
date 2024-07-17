@@ -64,14 +64,13 @@ if (! empty($this->extra_sidebar))
 	$this->sidebar .= $this->extra_sidebar;
 }
 ?>
-
 <div class="<?php echo TJFIELDS_WRAPPER_CLASS;?> tj-countries j-sidebar-container" id="j-sidebar-container">
 	<form action="<?php echo Route::_('index.php?option=com_tjfields&view=countries&client=' . $this->input->get('client', '', 'STRING')); ?>" method="post" name="adminForm" id="adminForm">
 		<div class="col-md-12">
 			<div class="js-stools" role="search">
 				<div class="js-stools-container-bar">
 					<div id="filter-bar" class="btn-toolbar">
-						<div class="js-stools-container-selector filter-search btn-group float-start">
+						<div class="js-stools-container-selector filter-search btn-group float-start col-12 col-sm-12 col-md-2 col-lg-4">
 							<input
 								type="text"
 								name="filter_search"
@@ -80,7 +79,6 @@ if (! empty($this->extra_sidebar))
 								value="<?php echo $this->escape($this->state->get('filter.search')); ?>"
 								class="hasTooltip form-control"
 								title="<?php echo Text::_('COM_TJFIELDS_FILTER_SEARCH_DESC_COUNTRIES'); ?>" />
-
 							<button
 								type="submit"
 								class="btn btn-primary hasTooltip"
@@ -95,7 +93,7 @@ if (! empty($this->extra_sidebar))
 								<i class="icon-remove"></i>
 							</button>
 						</div>
-						<div class="js-stools-container-selector btn-group float-end hidden-phone hidden-tablet">
+						<div class="js-stools-container-selector btn-group float-end col-12 col-sm-12 col-md-2 hidden-phone hidden-tablet">
 							<label for="directionTable" class="element-invisible">
 								<?php echo Text::_('JFIELD_ORDERING_DESC'); ?>
 							</label>
@@ -121,7 +119,7 @@ if (! empty($this->extra_sidebar))
 								</option>
 							</select>
 						</div>
-						<div class="js-stools-container-selector btn-group float-end hidden-phone hidden-tablet">
+						<div class="js-stools-container-selector btn-group float-end col-12 col-sm-12 col-md-2 hidden-phone hidden-tablet">
 							<label for="sortTable" class="element-invisible">
 								<?php echo Text::_('JGLOBAL_SORT_BY'); ?>
 							</label>
@@ -130,10 +128,10 @@ if (! empty($this->extra_sidebar))
 								<?php echo HTMLHelper::_('select.options', $sortFields, 'value', 'text', $listOrder); ?>
 							</select>
 						</div>
-						<div class="js-stools-container-selector btn-group float-end hidden-phone">
+						<div class="js-stools-container-selector btn-group float-end col-12 col-sm-12 col-md-2 hidden-phone">
 							<?php echo HTMLHelper::_('select.genericlist', $this->publish_states, "filter_published", 'class="form-select" size="1" onchange="document.adminForm.submit();" name="filter_published"', "value", "text", $this->state->get('filter.state'));?>
 						</div>
-						<div class="js-stools-container-selector btn-group float-end hidden-phone">
+						<div class="js-stools-container-selector btn-group float-end col-12 col-sm-12 col-md-2 col-lg-1 hidden-phone">
 							<label for="limit" class="element-invisible"><?php echo Text::_('JFIELD_PLG_SEARCH_SEARCHLIMIT_DESC'); ?></label>
 							<?php echo $this->pagination->getLimitBox(); ?>
 						</div>
@@ -141,7 +139,6 @@ if (! empty($this->extra_sidebar))
 				</div>
 			</div>
 		</div>
-
 		<?php
 		if (empty($this->items))
 		{?>
