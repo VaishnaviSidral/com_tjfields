@@ -14,7 +14,7 @@ use Joomla\CMS\Form\FormField;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Uri\Uri;
 
-JLoader::import('components.com_tjfields.models.fields.file', JPATH_ADMINISTRATOR);
+JLoader::import('components.com_tjfields.models.fields.tjfile', JPATH_ADMINISTRATOR);
 
 /**
  * Form Field Image class
@@ -22,7 +22,7 @@ JLoader::import('components.com_tjfields.models.fields.file', JPATH_ADMINISTRATO
  *
  * @since  __DEPLOY_VERSION__
  */
-class JFormFieldImage extends JFormFieldFile
+class JFormFieldImage extends JFormFieldTjFile
 {
 	/**
 	 * The form field type.

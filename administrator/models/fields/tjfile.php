@@ -332,7 +332,18 @@ class JFormFieldTjFile extends JFormFieldFile
 
 			if ($data->fields_value_table->value)
 			{
-				$fileTitle = substr($data->fields_value_table->value, strpos($data->fields_value_table->value, '_', 12) + 1);
+				//~ $fileTitle = substr($data->fields_value_table->value, strpos($data->fields_value_table->value, '_', 12) + 1);
+
+$value = $data->fields_value_table->value;
+$offset = 12;
+
+// Check if the string length is sufficient
+if (strlen($value) > $offset) {
+    $fileTitle = substr($value, strpos($value, '_', $offset) + 1);
+} else {
+    // Handle the case where the string is shorter than the offset
+    $fileTitle = $value; // Or some other default behavior
+}				
 			}
 
 			if ($renderer == 'download')
