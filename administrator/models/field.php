@@ -322,19 +322,19 @@ class TjfieldsModelField extends AdminModel
 		// Remove extra value which are not needed to save in the fields table
 		$TjfieldsHelper = new TjfieldsHelper;
 
-		if (array_key_exists("accept",$data['params']))
+if (isset($data['params']) && is_array($data['params']) && array_key_exists("accept", $data['params'])) 
 		{
 		    $data['params']['accept'] = preg_replace('/\s+/', '', $data['params']['accept']);
 		}
 
-		if (array_key_exists("uploadpath", $data['params']))
-		{
+if (isset($data['params']) && is_array($data['params']) && array_key_exists("uploadpath", $data['params'])) {
+
 		    // Rename the .htaccess file if the file renderer is changed to preview
 		    $htaccessFile = $data['params']['uploadpath'] . '/' . $this->htaccess;
 		}
 		
-		if (array_key_exists("renderer", $data['params']) && $data['params']['renderer'] == 'preview')
-		{
+if (isset($data['params']) && is_array($data['params']) && array_key_exists("renderer", $data['params']) && $data['params']['renderer'] == 'preview') 
+{
 			if (!empty($htaccessFile) && File::exists($htaccessFile))
 			{
 				// Rename the .htaccess file if the renderer is preview
