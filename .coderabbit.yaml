@@ -65,6 +65,7 @@ reviews:
     base_branches:
     - "master"
     - "dev"
+    - "j4x"
     - "feat/*"
     - "feat-*"
     - "release-*"
